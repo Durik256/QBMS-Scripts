@@ -1,0 +1,15 @@
+#byDurik256
+#BLEACH Rebirth of Souls .tmd2/ .lds
+comtype zlib
+
+idstring "PZZE"
+getdstring EXT 4
+get DECSIZE long
+get ZERO long
+get OFSDATA long
+get BLOCKSIZE asize
+math BLOCKSIZE - OFSDATA
+
+get NAME basename
+string NAME p "%s_dec.%s" NAME EXT
+clog NAME OFSDATA BLOCKSIZE DECSIZE
